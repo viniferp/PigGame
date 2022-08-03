@@ -50,20 +50,14 @@ function switchPlayer() {
 }
 
 btnHoldEl.addEventListener('click', function() {
-    let score = 0;
     // Add current score to active player´s score
-    if(activePlayer === 0) {
-        score0El.textContent =  parseInt(score0El.textContent) + parseInt(current0El.textContent);
-        score = parseInt(score0El.textContent);
-    }else {
-        score1El.textContent = parseInt(score1El.textContent) + parseInt(current1El.textContent);
-        score = parseInt(score1El.textContent);
-    }
-    // Check if player´s score is >= 20
-    // Finish the game
-    if(score >= 20) {
-        activePlayer === 0 ? player0El.classList.add('player--winner') : player1El.classList.add('player--winner');
+    scores[activePlayer] += currentScore;
+    document.getElementById(`current--${activePlayer}`).textContent = scores[activePlayer];
+    
+    if(scores[activePlayer] >= 20){
+        
     } else {
+        // Switch to the next player
         switchPlayer();
     }
 });
