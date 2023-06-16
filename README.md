@@ -1,6 +1,6 @@
 🐷 Pig Game
 
-Welcome to the Pig Game! This project brings the classic dice game to life, implemented using HTML, CSS, and JavaScript. Unlike traditional versions, this game is designed for local multiplayer fun, allowing you to challenge your friend in an exciting race to reach 50 points. Roll the dice, strategize your moves, and may the luckiest player prevail!
+Welcome to the Pig Game! This project showcases my knowledge in coding with HTML, CSS, and JavaScript. It brings the classic dice game to life, implemented using HTML, CSS, and JavaScript. Unlike traditional versions, this game is designed for local multiplayer fun, allowing you to challenge your friend in an exciting race to reach 50 points. Roll the dice, strategize your moves, and may the luckiest player prevail!
 
 🎮 Game Rules:
 
