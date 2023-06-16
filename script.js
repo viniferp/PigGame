@@ -59,16 +59,21 @@ btnHoldEl.addEventListener('click', function() {
         score1El.textContent = parseInt(score1El.textContent) + parseInt(current1El.textContent);
         score = parseInt(score1El.textContent);
     }
-    // Check if player´s score is >= 20
+    // Check if player´s score is >= 50
     // Finish the game
     if(score >= 20) {
         activePlayer === 0 ? player0El.classList.add('player--winner') : player1El.classList.add('player--winner');
+        btnRollEl.disabled = true;
+        btnHoldEl.disabled = true;
+        allowBtn();
     } else {
         switchPlayer();
     }
 });
 
-btnNewEl.addEventListener('click', function() {
+btnNewEl.addEventListener('click', newGame); 
+
+function newGame() {
     current0El.textContent = 0;
     current1El.textContent = 0;
     score0El.textContent = 0;
@@ -77,7 +82,16 @@ btnNewEl.addEventListener('click', function() {
     player1El.classList.remove('player--active');
     player0El.classList.remove('player--winner');
     player1El.classList.remove('player--winner');
-}); 
+}
+
+function allowBtn() {
+    setTimeout(
+      function() {
+        btnRollEl.disabled = false;
+        btnHoldEl.disabled = false;
+        newGame();
+      }, 5000);
+  }
 
 function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
